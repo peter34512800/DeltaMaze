@@ -14,7 +14,9 @@ enum class CellType
 {
     WALL,
     ROOM,
-    PATH
+    PATH,
+    START,
+    END
 };
 
 struct pairHash

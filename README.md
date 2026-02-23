@@ -24,3 +24,12 @@ To run, run the following command
 ```
 ./DeltaMaze
 ```
+
+### Screenshots
+![Menu Image](./assets/img/Menu.png)
+![Maze Image](./assets/img/Maze.png)
+
+
+### Upcoming Development
+- [ ] Solver mode
+- [ ] Generation Visualization mode

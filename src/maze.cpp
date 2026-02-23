@@ -115,8 +115,8 @@ void Maze::generateMaze()
     }
 
     // Set starting and ending path after generation
-    grid_[0][1] = CellType::PATH;
-    grid_[rows_ - 1][cols_ - 2] = CellType::PATH;
+    grid_[0][1] = CellType::START;
+    grid_[rows_ - 1][cols_ - 2] = CellType::END;
 }
 
 pair<int, int> Maze::pickRandomPairFromSet(const unordered_set<pair<int, int>, pairHash> &r, mt19937 &rng)
@@ -147,6 +147,14 @@ void Maze::drawMaze()
             if (grid_[i][j] == CellType::PATH)
             {
                 DrawRectangle(cellSize.first * j + mazeBoundStart.first, cellSize.second * i + mazeBoundStart.second, cellSize.first, cellSize.second, WHITE);
+            }
+            else if (grid_[i][j] == CellType::START)
+            {
+                DrawRectangle(cellSize.first * j + mazeBoundStart.first, cellSize.second * i + mazeBoundStart.second, cellSize.first, cellSize.second, GREEN);
+            }
+            else if (grid_[i][j] == CellType::END)
+            {
+                DrawRectangle(cellSize.first * j + mazeBoundStart.first, cellSize.second * i + mazeBoundStart.second, cellSize.first, cellSize.second, RED);
             }
             else
             {
